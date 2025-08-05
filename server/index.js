@@ -39,12 +39,10 @@ mongoose.connect(mongoUrl);
 const createServer = async (root = process.cwd()) => {
   const app = Express();
 
-  
   app.use((req, res, next) => {
     res.setHeader("ngrok-skip-browser-warning", "true");
     next();
   });
-
 
   app.disable("x-powered-by");
 
@@ -180,3 +178,6 @@ if (isDev) {
     });
   });
 }
+
+
+export default app;
